@@ -1,5 +1,16 @@
-# https://github.com/docker-library/cassandra
+# About This Fork
 
+Forked from: https://github.com/docker-library/cassandra
+
+This fork updates the Cassandra 2.1 (2.1.22) Dockerfile to support builds on arm64 in the branch and adds a Cassandra 2.1.16 build needed for project-specific work. Both changes are in the `update-2.1-for-arm64` branch.
+
+## arm64 Changes
+
+* Use Eclipse Temurin JRE 8 which has an arm64 image
+* Upgrade JNA to 4.2.2, the earliest version that has aarch64 support is 4.2.0 (https://github.com/java-native-access/jna/commit/6cd4216336b373339192bef877584d7d78c4b92d) (TBD: why did I choose 4.2.2?)
+* Upgrade Snappy to 1.1.8.2, the earliest version with Apple Silicon support (https://github.com/xerial/snappy-java/commit/ab18bdb45752eeab9dd738b5f83093d27f314e12)
+
+# Cassandra Docker Library
 ## Maintained by: [the Docker Community](https://github.com/docker-library/cassandra)
 
 This is the Git repo of the [Docker "Official Image"](https://github.com/docker-library/official-images#what-are-official-images) for [`cassandra`](https://hub.docker.com/_/cassandra/) (not to be confused with any official `cassandra` image provided by `cassandra` upstream). See [the Docker Hub page](https://hub.docker.com/_/cassandra/) for the full readme on how to use this Docker image and for information regarding contributing and issues.
